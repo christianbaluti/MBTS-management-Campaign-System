@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS `chart_data_line` (
+  `month` varchar(10) NOT NULL,
+  `sale` int(3) NOT NULL,
+  `profit` int(3) NOT NULL,
+  `exp_fixed` int(3) NOT NULL,
+  `exp_variable` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `chart_data_column`
+--
+
+INSERT INTO `chart_data_line` (`month`, `sale`, `profit`, `exp_fixed`, `exp_variable`) VALUES
+('Jan', 300, 150, 50, 100),
+('Feb', 200, 130, 50, 20),
+('Mar', 300, 200, 50, 50),
+('April', 400, 300, 50, 50),
+('May', 300, 200, 50, 50),
+('Jun', 200, 100, 50, 50),
+('July', 200, 150, 50, 0),
+('Jan', 300, 150, 50, 100),
+('Feb', 200, 130, 50, 20),
+('Mar', 300, 200, 50, 50),
+('April', 400, 300, 50, 50),
+('May', 300, 200, 50, 50),
+('Jun', 200, 100, 50, 50),
+('July', 200, 70, 50, 80);

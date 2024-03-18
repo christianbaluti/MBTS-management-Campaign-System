@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>plus2net.com : Line chart</title>
+</head>
+<body >
+<script>
+var my_2d=[["Jan","300","150","50","100"],["Feb","200","130","50","20"],["Mar","300","200","50","50"],["April","400","300","50","50"],["May","300","200","50","50"],["Jun","200","100","50","50"],["July","200","150","50","0"],["Jan","300","150","50","100"],["Feb","200","130","50","20"],["Mar","300","200","50","50"],["April","400","300","50","50"],["May","300","200","50","50"],["Jun","200","100","50","50"],["July","200","70","50","80"],false]
+</script><div id='curve_chart'></div>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current',{packages:['corechart']})
+google.charts.setOnLoadCallback(drawChart);
+function drawChart(){
+	//var data=new google.visualization
+	var data=new google.visualization.DataTable();
+	data.addColumn('string','Month');
+	data.addColumn('number','sale');
+	data.addColumn('number','Profit');
+	data.addColumn('number','Exp_fixed');
+	data.addColumn('number','Exp_var');
+	for(i=0;i<my_2d.length;i++)
+data.addRow([my_2d[i][0],parseInt(my_2d[i][1]),parseInt(my_2d[i][2]),
+parseInt(my_2d[i][3]),parseInt(my_2d[i][4])]);
+
+var options = {
+ title: 'plus2net.com Sale Profit',
+ curveType: 'function',
+width: 800,
+ height: 500,
+	 legend: { position: 'bottom' },
+	   animation:{'startup':true,
+        duration: 5000,
+        easing: 'out',
+      },
+ };
+ var chart=new
+ google.visualization.LineChart(document.getElementById('curve_chart'))
+chart.draw(data,options);
+}
+</script>
+</body></html>
